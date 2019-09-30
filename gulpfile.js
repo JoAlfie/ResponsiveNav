@@ -11,7 +11,6 @@ const rename = require("gulp-rename");
 const babel = require("gulp-babel");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
-const imagemin = require("gulp-imagemin");
 
 // compile the styles.less file into styles.min.css
 
@@ -80,21 +79,5 @@ task("appScripts", function() {
 });
 
 task("doScripts", parallel("appScripts", "vendorScripts"));
-
-/* task("images", function() {
-	watch(".development/images/*.*", function optimiseImages(cb) {
-		return src("./development/images/*.*")
-			.pipe(imagemin())
-			.pipe(dest("./public/images"));
-		cb();
-	});
-}); */
-
-task("images", function optimiseImages(cb) {
-	return src("./development/images/*.*")
-		.pipe(imagemin())
-		.pipe(dest("./public/images"));
-	cb();
-});
 
 task("dev", parallel("doLess", "appScripts", "vendorScripts"));
