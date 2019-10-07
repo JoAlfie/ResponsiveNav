@@ -134,8 +134,7 @@
 						!el.closest(`${this.options.childListSelector}`) ||
 						getComputedStyle(
 							el.closest(`${this.options.childListSelector}`)
-								.display !== "none"
-						)
+						).display !== "none"
 				);
 			} else {
 				focusableChildren = technicallyFocusableChildren;
