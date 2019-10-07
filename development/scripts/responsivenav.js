@@ -50,7 +50,10 @@
 	// remove hidden attribute if it's showing full menu at start
 	// i.e. is bigger than tablet / set breakpoint
 	Nav.prototype.checkSize = function() {
-		if (window.innerWidth >= this.options.breakpoint) {
+		if (
+			this.options.breakpoint &&
+			window.innerWidth >= this.options.breakpoint
+		) {
 			this.menu.removeAttribute("hidden");
 		} else if (!this.menu.hasAttribute("hidden")) {
 			this.menu.setAttribute("hidden", "");
