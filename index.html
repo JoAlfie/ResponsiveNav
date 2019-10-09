@@ -9,16 +9,17 @@
 	<body>
 		<header>
 			<h1>Responsive Nav</h1>
-			<nav class="respnav">
+			<nav class="respnav" data-respnav>
 				<button
 					class="respnav__trigger"
 					aria-expanded="false"
 					aria-controls="menu"
 					id="menu-trigger"
+					data-respnav-trigger
 				>
 					Open Menu
 				</button>
-				<div class="respnav__inner" id="menu">
+				<div class="respnav__inner" id="menu" data-respnav-menu>
 					<ul class="respnav__list">
 						<li class="respnav__listitem">
 							<a href="/">Link</a>
@@ -29,5 +30,13 @@
 			</nav>
 		</header>
 		<main id="main"></main>
+		<script src="/development/scripts/responsivenav.js"></script>
+		<script>
+			const respNav = new Nav({
+				dataPrefix: "data-respnav",
+				breakpoint: false,
+			});
+			respNav.init();
+		</script>
 	</body>
 </html>
