@@ -3,6 +3,31 @@
 Use one set of markup for a drawer navigation on mobile and a navigation bar on desktop!
 Accessible - uses semantic HTML5, aria, and focus management.
 
+## HTML
+
+```
+<nav data-respnav>
+	<button data-respnav-trigger>Open Menu</button>
+	<div data-respnav-menu>
+		<ul>
+			<li><a href="">Nav Item</a></li>
+			<li><a href="">Nav Item</a></li>
+			<li><a href="">Nav Item</a></li>
+		</ul>
+	</div>
+</nav>
+```
+
+## Javascript
+
+```
+<script src="respnav.min.js"></script>
+<script>
+	const respnav = new Nav({ options });
+	respnav.init();
+</script>
+```
+
 ## Options
 
 | Property          | Type          | Default        | Description                                                                                                                                    |
